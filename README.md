@@ -1,2 +1,2 @@
 # coinwatch
-A bitcoin.co.id watcher to give you notification, and auto order or sell
+A bitcoin/ether/zcoin etc cryptocurency watcher to give you notification, it's like your desktop rpivate assistant. and also have capability to auto order or sell 
