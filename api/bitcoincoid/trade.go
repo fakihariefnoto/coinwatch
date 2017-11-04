@@ -1,1 +1,1 @@
-package bitcoingoid
+package bitcoincoid

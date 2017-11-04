@@ -1,0 +1,22 @@
+{
+    "config" : {
+        "notif" : {
+            "desktop" : false,
+            "cli" : false
+        },
+        "api" : {
+            "key" : "",
+            "secret" : ""
+        },
+        "watch" : {
+            "time" : 0,
+            "btc" : 0,
+            "bth" : 0,
+            "xzc" : 0,
+            "etc" : 0,
+            "eth" : 0,
+            "ltc" : 0
+        }
+
+    }
+}

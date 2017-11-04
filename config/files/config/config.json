@@ -1,0 +1,23 @@
+{
+     "FileName": "config",
+     "Path": "files/config",
+     "config": {
+         "notif": {
+             "desktop": false,
+             "cli": false
+         },
+         "api": {
+             "key": "hee",
+             "secret": "wii"
+         },
+         "watch": {
+             "btc": 0,
+             "bch": 0,
+             "xzc": 0,
+             "eth": 0,
+             "etc": 0,
+             "ltc": 0,
+             "time": 0
+         }
+     }
+ }
