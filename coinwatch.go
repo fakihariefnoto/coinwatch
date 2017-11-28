@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	bitcoincoid "github.com/fakihariefnoto/coinwatch/api/bitcoincoid"
 	notif "github.com/fakihariefnoto/coinwatch/notifier"
 	"time"
 )
@@ -15,19 +16,51 @@ func init() {
 	notify = notif.New()
 	sender = notify.NewConfig(notif.Config{
 		Icon:       notif.ANGRY,
-		FixedTitle: "Percobaan",
+		FixedTitle: "Sekilas Info",
 	})
 }
 
 func main() {
 	fmt.Println("Trial send notification")
-	sender.Message("", "wkwkwkwk").Send()
 
-	time.Sleep(1000)
+	bci := bitcoincoid.New()
 
-	sender.Message("kirim", "hahahaha").SendWithIcon(notif.ANGEL)
+	for true {
 
-	time.Sleep(1000)
+		bch, err := bci.GetPriceMarket("bch-idr")
+		if err != nil {
+			fmt.Println(err)
+		}
 
-	sender.Message("hmmmmm", "hmmmmmm").SendWithIcon(notif.LAUGH)
+		xzc, err := bci.GetPriceMarket("xzc-idr")
+		if err != nil {
+			fmt.Println(err)
+		}
+
+		etc, err := bci.GetPriceMarket("etc-idr")
+		if err != nil {
+			fmt.Println(err)
+		}
+
+		eth, err := bci.GetPriceMarket("eth-idr")
+		if err != nil {
+			fmt.Println(err)
+		}
+
+		ltc, err := bci.GetPriceMarket("ltc-idr")
+		if err != nil {
+			fmt.Println(err)
+		}
+
+		btc, err := bci.GetPriceMarket("btc-idr")
+		if err != nil {
+			fmt.Println(err)
+		}
+
+		body := fmt.Sprintf("BCH -> %v, XZC -> %v\nETH -> %v, ETC -> %v\nLTC -> %v, BTC -> %v\n", bch, xzc, eth, etc, ltc, btc)
+
+		sender.Message("Sekilas Info", body).SendWithIcon(notif.LAUGH)
+
+		time.Sleep(20 * time.Second)
+	}
 }
